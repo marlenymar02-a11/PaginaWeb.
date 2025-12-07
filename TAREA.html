@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LG Solar - Registro</title>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    body { 
+        margin:0; 
+        font-family: Arial, sans-serif; 
+        background:#0B1D2A; 
+        color:white;
+    }
+
+    /* -------- NAVBAR ---------- */
+    .navbar {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 40px;
+        background:white;
+        color:black;
+        border-bottom:1px solid #ddd;
+    }
+    .navbar .links a{
+        margin-left:25px;
+        text-decoration:none;
+        color:#333;
+        font-size:16px;
+    }
+
+    /* -------- HERO SECTION ---------- */
+    .hero {
+        position:relative;
+        width:100%;
+        height:350px;
+        background:url('imagenes/WhatsApp Image 2025-12-03 at 10.33.24.jpeg') no-repeat center/cover;
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+        padding-left:60px;
+        color:white;
+    }
+    .hero h1{
+        font-size:48px;
+        margin:0;
+    }
+    .btn-hero{
+        margin-top:20px;
+        background:white;
+        color:#333;
+        padding:12px 25px;
+        border:none;
+        border-radius:5px;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    /* -------- FORMULARIO NUEVO ---------- */
+    .form-container {
+        padding: 40px 60px;
+        background:#0F1B2B;
+    }
+
+    .form-area {
+        padding-right: 250px;
+    }
+
+    h3 {
+        font-weight: 600;
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+
+    .row-container {
+        display: inline-block;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+        margin-bottom: 15px;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+    }
+
+    .input-group label {
+        margin-bottom: 4px;
+        opacity: 0.8;
+    }
+
+    .input-group input {
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.25);
+        padding: 7px 8px;
+        color: white;
+        font-size: 14px;
+        outline: none;
+        border-radius: 0;
+    }
+
+    .options-row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+        gap: 25px;
+    }
+
+    .options-row label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+    }
+
+    .btn-enviar {
+        background: #C96945;
+        color: white;
+        border: none;
+        padding: 6px 22px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: auto;
+        height: 32px;
+        align-self: center;
+    }
+
+    .btn-enviar:hover {
+        background: #b65c3c;
+    }
+
+    /* -------- TABLA NUEVA ---------- */
+    table {
+        width: 100%;
+        margin-top: 35px;
+        border-collapse: collapse;
+        font-size: 14px;
+        background: rgba(255,255,255,0.05);
+        color: white;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        text-align: left;
+    }
+
+    table th {
+        background: rgba(255,255,255,0.15);
+    }
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo"><strong>🐢 LG Solar</strong> <font size="0.5">Mejora el medio ambiente</font></div>
+    <div class="links">
+        <a href="#">Por qué LG Solar</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Contacto</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Son tiempos<br>de cambio</h1>
+        <p>Genera y almacena tu propia energía. Empieza a ahorrar<br>
+        ya con energía limpia y ecológica.</p>
+        <button class="btn-hero">Ver cómo</button>
+    </div>
+</div>
+
+<!-- FORMULARIO NUEVO -->
+<div class="form-container">
+
+  <div class="form-area">
+
+    <h3>¡Obtén hoy un estimado sin compromiso!</h3>
+
+    <form id="cotizacionForm">
+
+      <div class="row-container">
+
+        <div class="row">
+          <div class="input-group">
+            <label>Nombre *</label>
+            <input type="text" name="nombre" required />
+          </div>
+
+          <div class="input-group">
+            <label>Apellido *</label>
+            <input type="text" name="apellido" required />
+          </div>
+
+          <div class="input-group">
+            <label>Email *</label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div class="input-group">
+            <label>Teléfono *</label>
+            <input type="tel" name="telefono" required />
+          </div>
+
+          <div class="input-group">
+            <label>Dirección</label>
+            <input type="text" name="direccion" />
+          </div>
+        </div>
+
+        <div class="options-row">
+          <label><input type="checkbox" name="propietario" /> Propietario</label>
+          <label><input type="checkbox" name="empresario" /> Empresario</label>
+
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- TABLA NUEVA -->
+  <table id="tablaDatos">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+</div>
+
+<script>
+document.getElementById("cotizacionForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = new FormData(this);
+  const tabla = document.querySelector("#tablaDatos tbody");
+
+  let tipos = [];
+  if (form.get("propietario")) tipos.push("Propietario");
+  if (form.get("empresario")) tipos.push("Empresario");
+
+  const fila = document.createElement("tr");
+
+  fila.innerHTML = `
+    <td>${form.get("nombre")}</td>
+    <td>${form.get("apellido")}</td>
+    <td>${form.get("email")}</td>
+    <td>${form.get("telefono")}</td>
+    <td>${form.get("direccion") || ""}</td>
+    <td>${tipos.join(" / ")}</td>
+  `;
+
+  tabla.appendChild(fila);
+
+  this.reset();
+
+  Swal.fire({
+    title: "Registro insertado",
+    text: "El formulario fue guardado correctamente.",
+    icon: "success",
+    confirmButtonColor: "#C96945",
+    background: "#0F1B2B",
+    color: "white"
+  });
+});
+</script>
+
+</body>
+</html>
